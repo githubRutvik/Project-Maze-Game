@@ -2,27 +2,22 @@ package mazeObjects;
 
 
 /**
- * A class representing the 'key' game object.
+ * This class has code for functioning of 'Key' objects in the game.
  *
- * @author kphilemon
  */
 public class Key extends GameObject {
 
     private static final char DEFAULT_ICON = 'K';
 
-    /**
-     * @param position the {@link Position} of this game object
-     */
+
     public Key(Position position) {
         super(DEFAULT_ICON, position);
     }
 
     /**
-     * Returns a String object representing the direction hints to this Key object
-     * from the specified player's position.
-     *
-     * @param playerPosition the {@link Position} of the {@link Player}
-     * @return the direction hints
+	Returns the movement hints for the player from its current location in the maze with arrows 
+	indicating the directions to move in.
+
      */
     public String getDirectionHints(Position playerPosition) {
         StringBuilder sb = new StringBuilder();

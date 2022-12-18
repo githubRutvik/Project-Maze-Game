@@ -1,8 +1,7 @@
 package mazeGame;
 
-import main.game_objects.Key;
-import main.game_objects.Player;
-import main.game_objects.Torch;
+import mazeObjects.Player;
+import mazeObjects.Torch;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;

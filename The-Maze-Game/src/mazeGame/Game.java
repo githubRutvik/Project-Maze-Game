@@ -25,7 +25,7 @@ public class Game implements ProgressListener {
     public Game() {
         init();
         setupWindowForKeyListener();
-        gameLevelOne();
+        startLevelOne();
     }
 
     /**
@@ -79,7 +79,7 @@ public class Game implements ProgressListener {
     /**
      * Initializes LevelOne, setup the ProgressListener and KeyListener before starting level one.
      */
-    private void gameLevelOne() {
+    private void startLevelOne() {
         levelOne = new LevelOne(gameMap, player, display);
         levelOne.addProgressListener(this);
         jFrame.addKeyListener(levelOne);
@@ -89,7 +89,7 @@ public class Game implements ProgressListener {
     /**
      * Initializes LevelTwo, setup the ProgressListener and KeyListener before starting level two.
      */
-    private void gameLevelTwo() {
+    private void startLevelTwo() {
         levelTwo = new LevelTwo(gameMap, player, display);
         levelTwo.setProgressListener(this);
         jFrame.addKeyListener(levelTwo);
@@ -100,7 +100,7 @@ public class Game implements ProgressListener {
     public void levelOneCompleted() {
         jFrame.removeKeyListener(levelOne);
         display.nextLevelMessage();
-        gameLevelTwo();
+        startLevelTwo();
     }
 
     @Override

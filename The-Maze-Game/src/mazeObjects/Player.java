@@ -4,7 +4,7 @@ package mazeObjects;
 public class Player extends GameObject implements Movable {
 
     public static final int INITIAL_HEALTH_LEVEL = 250;
-    private static final char DEFAULT_ICON = 'J';
+    private static final char DEFAULT_ICON = 'P';
     private static final int INITIAL_VISIBILITY = 2;
     private int visibility;
     private int healthLevel;

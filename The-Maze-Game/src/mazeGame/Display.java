@@ -148,13 +148,12 @@ class Display {
      */
     void gameIntroMessage() {
         clearScreen();
-        String[] intros = {"Player, 'P', the maze runner, is trapped in a deadly maze.\n\n",
-                "To escape from the maze, he must find all the keys, 'K', that are scattered in the maze.\n",
+        String[] intros = {"Hello there, you are trapped in a deadly maze.\n\n",
+                "To escape from the maze, you must find all the keys, 'K', that are scattered in the maze.\n",
                 "After collecting all the keys, the exit, 'E', will appear at the corner of the maze.\n\n",
-                "Player's visibility is very limited due to the heavy fog, '#', he couldn't see beyond two blocks.\n",
-                "However, there's a holy torch, '%', hidden somewhere in the maze. It could help to boost Player's visibility.\n\n",
-                "And of course, Player is just a normal guy, he couldn't see or walk through the maze walls.\n",
-                "Every movement will cost Player a drop of blood. So make your move wisely! (Press the arrow keys to move).\n\n",
+                "The Maze is completely fogged up , '#', so your visibility is limited to two blocks.\n",
+                "However, there're Light switches in the maze, '%', hidden somewhere. That will help you boost your visibility in the fog.\n\n",
+                "Every movement will cost you a drop of blood. So make your move wisely! (Press the arrow keys to move).\n\n",
                 "Press ENTER to continue... "};
         for (String intro : intros) {
             printWithDelay(intro, 40);

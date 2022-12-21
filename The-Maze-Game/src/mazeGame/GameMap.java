@@ -5,12 +5,12 @@ import mazeObjects.GameObject;
 import mazeObjects.Movable;
 import mazeObjects.Player;
 import mazeObjects.Position;
-import main.maze_generator.MazeGenerator;
+import mazeMap.MazeMap;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-import static main.maze_generator.MazeGenerator.EMPTY_SPACE;
+import static mazeMap.MazeMap.EMPTY_SPACE;
 
 /**
  * This class will manage the game objects in the game map.
@@ -26,7 +26,7 @@ public class GameMap {
 
 
     GameMap(int mazeHeight, int mazeWidth) {
-        this.map = new MazeGenerator(mazeHeight, mazeWidth).generate();
+        this.map = new MazeMap(mazeHeight, mazeWidth).generate();
         this.height = map.length;
         this.width = map[0].length;
         randomize_X();

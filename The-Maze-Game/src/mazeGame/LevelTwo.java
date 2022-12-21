@@ -1,5 +1,6 @@
 package mazeGame;
 
+import mazeObjects.Exit;
 import mazeObjects.Player;
 
 import java.awt.event.KeyEvent;

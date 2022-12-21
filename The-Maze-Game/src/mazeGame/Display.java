@@ -1,5 +1,6 @@
 package mazeGame;
 
+import mazeObjects.Key;
 import mazeObjects.Player;
 
 import java.io.IOException;

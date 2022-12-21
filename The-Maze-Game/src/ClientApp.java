@@ -12,6 +12,7 @@ public class ClientApp {
             e.printStackTrace();
         }
         System.out.println("***********Welcome to the Maze Runner Game***********");
+        System.out.println("\n");
         new Game();
     }
 }

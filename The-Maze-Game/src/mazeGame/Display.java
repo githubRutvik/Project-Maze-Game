@@ -151,7 +151,9 @@ class Display {
         String[] intros = {"Hello there, you are trapped in a deadly maze.\n\n",
                 "To escape from the maze, you must find all the keys, 'K', that are scattered in the maze.\n",
                 "After collecting all the keys, the exit, 'E', will appear at the corner of the maze.\n\n",
-                "The Maze is completely fogged up , '#', so your visibility is limited to two blocks.\n",
+                "The Maze is completely fogged up , '#', so your visibility is limited to two blocks, there are Rivals(Enemies) spawn in the map '!' which will.\n",
+                "damage you when you encounter them and to deal with the same Armour 'A' are given to boost your health.",
+                "This makes the maze a bit tougher and adventurous too.",
                 "However, there're Light switches in the maze, '%', hidden somewhere. That will help you boost your visibility in the fog.\n\n",
                 "Every movement will cost you a drop of blood. So make your move wisely! (Press the arrow keys to move).\n\n",
                 "Press ENTER to continue... "};

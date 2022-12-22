@@ -1,4 +1,4 @@
-package mazeObjects;
+package main.mazeObjects;
 
 import java.awt.event.KeyEvent;
 

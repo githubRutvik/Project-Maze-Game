@@ -1,4 +1,4 @@
-package mazeObjects;
+package main.mazeObjects;
 
 public class Rival extends GameObject {
 	

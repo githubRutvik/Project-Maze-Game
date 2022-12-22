@@ -1,4 +1,4 @@
-package mazeObjects;
+package main.mazeObjects;
 
 
 public class Player extends GameObject implements Movable {

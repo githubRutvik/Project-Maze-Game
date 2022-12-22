@@ -1,16 +1,16 @@
-package mazeGame;
+package main.mazeGame;
 
 
-import mazeObjects.GameObject; 
-import mazeObjects.Movable;
-import mazeObjects.Player;
-import mazeObjects.Position;
-import mazeMap.MazeMap;
+import main.mazeObjects.GameObject; 
+import main.mazeObjects.Movable;
+import main.mazeObjects.Player;
+import main.mazeObjects.Position;
+import main.mazeMap.MazeMap;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-import static mazeMap.MazeMap.EMPTY_SPACE;
+import static main.mazeMap.MazeMap.EMPTY_SPACE;
 
 /**
  * This class will manage the game objects in the game map.

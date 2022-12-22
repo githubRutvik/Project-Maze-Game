@@ -1,61 +1,72 @@
-package mazeGame;
+package main.mazeGame;
 
-import mazeObjects.Exit; 
-import mazeObjects.Player;
+import main.mazeObjects.Key; 
+import main.mazeObjects.Player;
+import main.mazeObjects.Torch;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 
-/**Level details:
-Mission: find the exit to win the game
-Health level of the player will decrease by 5 every second.
-Game Over when the health level of the player is less than or equals to zero.
+/**
+ * Logic for Level 1
+ * The player has to collect all the keys to flash the torch.
+ * Then the entire Maze will become visible.
+ * Every move of the player will cost 1 Health Point
  */
-public class LevelTwo implements KeyListener {
+class LevelOne implements KeyListener {
 
+    static final int NUMBER_OF_KEYS = 3;
     private final GameMap gameMap;
     private final Player player;
     private final Display display;
     private ProgressListener progressListener;
-    private Exit exit;
-    private boolean hasFoundExit = false;
+    private Torch torch;
+    private ArrayList<Key> keys;
 
-    LevelTwo(GameMap gameMap, Player player, Display display) {
+    
+    LevelOne(GameMap gameMap, Player player, Display display) {
         this.gameMap = gameMap;
         this.player = player;
         this.display = display;
         init();
     }
 
-    void setProgressListener(ProgressListener progressListener) {
+
+    void addProgressListener(ProgressListener progressListener) {
         this.progressListener = progressListener;
     }
+
 
     private void init() {
         // init game objects
         gameMap.addToMap(player);
 
-        exit = new Exit(Exit.generateExitPosition(gameMap, player));
-        gameMap.addToMap(exit);
+        keys = new ArrayList<>();
+        for (int i = 0; i < NUMBER_OF_KEYS; i++) {
+            Key key = new Key(gameMap.getRandomPosition());
+            keys.add(key);
+            gameMap.addToMap(key);
+        }
+        torch = new Torch(gameMap.getRandomPosition());
+        gameMap.addToMap(torch);
 
-        display.update();
+        display.update(keys);
     }
 
-    /**
-     * Starts the game loop of level two.
-     */
+
     void start() {
         while (true) {
             if (player.isDead()) {
                 progressListener.levelFailed();
                 break;
             }
-            if (hasFoundExit) {
-                progressListener.levelTwoCompleted();
+            // 0 means all keys are collected
+            if (keys.size() == 0) {
+                gameMap.removeFromMap(torch);
+                progressListener.levelOneCompleted();
                 break;
             }
-            player.reduceHealthLevelBy(5);
-            display.update();
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -64,11 +75,20 @@ public class LevelTwo implements KeyListener {
         }
     }
 
-    private void checkIfPlayerHasFoundExit() {
-        if (player.getPosition().equals(exit.getPosition()))
-            hasFoundExit = true;
+
+    private void checkIfPlayerHasReachedItem() {
+        for (Key key : keys) {
+            if (player.getPosition().equals(key.getPosition())) {
+                keys.remove(key);
+                keys.trimToSize();
+                System.out.println(keys.size());
+                return;
+            }
+        }
+        if (!player.hasTorch() && player.getPosition().equals(torch.getPosition()))
+            player.foundTorch();
     }
-    
+
     @Override
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
@@ -81,20 +101,20 @@ public class LevelTwo implements KeyListener {
                     gameMap.removeFromMap(player);
                     player.move(DIRECTION);
                     gameMap.addToMap(player);
-                    checkIfPlayerHasFoundExit();
-                    display.update();
+                    checkIfPlayerHasReachedItem();
+                    player.reduceHealthLevelBy(1);
+                    display.update(keys);
                 } else {
                     display.invalidMovementMessage();
                 }
                 break;
             case KeyEvent.VK_F6:
                 Game.isVisibilityMode = !Game.isVisibilityMode;
-                display.update();
+                display.update(keys);
                 break;
             default:
                 break;
         }
-
     }
 
     @Override
@@ -107,3 +127,4 @@ public class LevelTwo implements KeyListener {
 
     }
 }
+

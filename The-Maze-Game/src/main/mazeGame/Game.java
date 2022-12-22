@@ -1,6 +1,6 @@
-package mazeGame;
+package main.mazeGame;
 
-import mazeObjects.Player; 
+import main.mazeObjects.Player; 
 
 import javax.swing.*;
 import java.util.Scanner;

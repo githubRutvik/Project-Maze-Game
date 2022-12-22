@@ -1,4 +1,4 @@
-package mazeGame;
+package main.mazeGame;
 
 /**
  * The listener interface for receiving level progress feedback.

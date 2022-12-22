@@ -1,4 +1,4 @@
-package mazeObjects;
+package main.mazeObjects;
 
 
 public abstract class GameObject {

@@ -1,4 +1,4 @@
-package mazeMap;
+package main.mazeMap;
 
 // Maze Map Generation
 

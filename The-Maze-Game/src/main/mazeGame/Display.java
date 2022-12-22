@@ -1,13 +1,13 @@
-package mazeGame;
+package main.mazeGame;
 
-import mazeObjects.Key; 
-import mazeObjects.Player;
+import main.mazeObjects.Key; 
+import main.mazeObjects.Player;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static mazeMap.MazeMap.*;
+import static main.mazeMap.MazeMap.*;
 
 
 /**

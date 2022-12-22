@@ -1,6 +1,6 @@
-package mazeObjects;
+package main.mazeObjects;
 
-import mazeGame.GameMap;
+import main.mazeGame.GameMap;
 
 public class Exit extends GameObject {
 

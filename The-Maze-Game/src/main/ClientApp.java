@@ -1,7 +1,7 @@
 package main;
-import java.io.IOException;
+import java.io.IOException; 
 
-import mazeGame.Game;
+import main.mazeGame.Game;
 
 public class ClientApp {
     public static void main(String[] args) {

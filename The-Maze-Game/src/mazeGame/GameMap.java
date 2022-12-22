@@ -1,7 +1,7 @@
 package mazeGame;
 
 
-import mazeObjects.GameObject;
+import mazeObjects.GameObject; 
 import mazeObjects.Movable;
 import mazeObjects.Player;
 import mazeObjects.Position;

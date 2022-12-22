@@ -1,4 +1,4 @@
-
+package mazeGame;
 import java.io.IOException;
 
 import mazeGame.Game;
